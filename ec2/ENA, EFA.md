@@ -1,0 +1,50 @@
+## 🟠 **ENA (Elastic Network Adapter)**
+
+ENA는 AWS에서 고성능 네트워크 트래픽을 처리하기 위한 기본 네트워크 어댑터입니다.
+
+💡 **목적 :** EC2 인스턴스의 일반적인 네트워크 성능 향상 (높은 처리량, 낮은 지연 시간)
+
+<br>
+
+### 🔶 **ENA 주요 특징**
+
+- **최대 100Gbps** 네트워크 대역폭 제공
+- **SR-IOV (Single Root I/O Virtualization)** 기반으로 네트워크 오버헤드 감소
+- 일반적인 **EC2 간 통신, VPC 내 통신, 인터넷 연결** 등에 사용
+- ENA 지원 여부 확인
+
+    ```bash
+    ethtool -i eth0
+    ```
+
+<br>
+
+### 🔶 **ENA가 적합한 경우**
+
+- **고성능 애플리케이션** (예 : 대규모 웹 서버, 빅데이터 처리, 머신러닝 트레이닝)
+- **대규모 데이터 전송** (예 : 데이터베이스 복제, 미디어 스트리밍)
+
+<br>
+
+## 🟠 **EFA (Elastic Fabric Adapter)**
+
+EFA는 **고성능 컴퓨팅 (HPC) 및 기계 학습**을 위한 네트워크 어댑터다.
+
+💡 **목적 :** 슈퍼컴퓨터 수준의 네트워크 성능 제공 (특히 MPI 기반 통신 최적화)
+
+<br>
+
+### 🔶 **EFA 주요 특징**
+
+- **MPI (Message Passing Interface) 및 NCCL (NVIDIA Collective Communication Library) 최적화**
+- **초저지연(Ultra-Low Latency), 높은 처리량(High Bandwidth) 제공**
+- **ENA보다 더 빠른 HPC 및 ML 통신 성능 제공**
+
+<br>
+
+### 🔶 **EFA가 적합한 경우**
+
+- **HPC (High Performance Computing) 워크로드**
+    - 예 : 과학 시뮬레이션, 금융 리스크 분석
+- **AI/ML 분산 학습 (예 : PyTorch, TensorFlow, NCCL 사용)**
+- **고속 데이터 분석 및 시뮬레이션**
